@@ -3,9 +3,9 @@
 
 #include <PID_v1.h>
 
-#define KP 20
+#define KP 3.5
 #define KI 0
-#define KD 0.155
+#define KD 0.08
 
 #define NXT_YELLOW_WIRE 2
 #define NXT_BLUE_WIRE 3

@@ -33,7 +33,7 @@ void NXTServo::goTo(int angle) {
   int desiredPulses = map(angle, 0, MAX_ANGLE, 0, PULSES_PER_ROTATION);
   setpoint = desiredPulses;
   unsigned long startMillis = millis();
-  while (abs(desiredPulses - encoderValue) > 0 and millis() - startMillis < (MAX_MILLIS_FOR_MOVE-2000)) {
+  while (abs(desiredPulses - encoderValue) > 0 and millis() - startMillis < (MAX_MILLIS_FOR_MOVE-4000)) {
     input = encoderValue;
     myPID.Compute();
     //Serial.println(abs(encoderValue));
