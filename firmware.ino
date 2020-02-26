@@ -18,6 +18,13 @@ void setup() {
 }
 
 void loop() {
+
+//  while(Serial.available()> 1)
+//  {
+//    int val  = Serial.parseInt();
+//    m.goTo(val);
+//  }
+  
   if (Command::available(HARDWARE)) {
     logln("newHW");
     Command hardwareCommand = Command(HARDWARE);
