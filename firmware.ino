@@ -19,7 +19,7 @@ void setup() {
 
 void loop() {
 
-//  while(Serial.available()> 1)
+//§  while(Serial.available()> 1)
 //  {
 //    int val  = Serial.parseInt();
 //    m.goTo(val);

@@ -6,7 +6,7 @@
 
 #define KP 40
 #define KI 0
-#define KD 2
+#define KD 4
 
 #define NXT_YELLOW_WIRE 2
 #define NXT_BLUE_WIRE 3
