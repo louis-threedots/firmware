@@ -20,6 +20,9 @@ enum CommandType {
   MOTOR_FWD = 102,            // f
   MOTOR_REV = 103,            // g
   CHANGE_SPEED = 104,         // h
+  BUTTON_PRESS = 105,         // i
+  PING = 106,                 // j
+  PONG = 107,                 // k
 };
 
 class Command {
