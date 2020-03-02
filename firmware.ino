@@ -6,6 +6,9 @@
 #define MAX_ACKNOWLEDGEMENT_TIME 1000
 #define INCLUDE_LOG 0
 
+#define BUTTON_PIN 5
+#define BUTTON_DEBOUNCE_TIME 50
+
 NXTServo m = NXTServo(4,7,6);
 
 //AltSoftSerial altSerial;
@@ -15,6 +18,7 @@ int thisCell = INITIAL_CELL_NUMBER;
 void setup() {
   Command::setupSerial();
   pinMode(13, OUTPUT);
+  pinMode(BUTTON_PIN, INPUT_PULLUP);
 }
 
 void loop() {
@@ -34,6 +38,14 @@ void loop() {
     logln("newSW");
     Command softwareCommand = Command(SOFTWARE);
     processNewCommand(softwareCommand);
+  }
+  else if (digitalRead(BUTTON_PIN) == LOW) {
+    delay(BUTTON_DEBOUNCE_TIME);
+    if (digitalRead(BUTTON_PIN) == LOW) {
+      Command buttonPressCmd = Command(0, BUTTON_PRESS, thisCell, HARDWARE);
+      buttonPressCmd.send();
+      while (digitalRead(BUTTON_PIN) == LOW) delay(10);
+    }
   }
   delay(10);
 }
@@ -65,7 +77,13 @@ void handleCommand(Command c) {
   log("Cmd type: ");
   logint((int)c.commandType);
   logln("");
+  Command pong = Command(c.commandData, PONG, thisCell, HARDWARE); // putting the line here works
   switch (c.commandType) {
+    case PING:
+      logln("PINGU");
+      //Command pong = Command(c.commandData, PONG, thisCell, HARDWARE); // putting it here doesn't
+      pong.send();
+      break;
     case LED_ON:
       logln("LEDON");
       digitalWrite(13, HIGH);
@@ -150,6 +168,10 @@ void handleCommand(Command c) {
         }
       }
       break;
+    default:
+      log("unknown cmd: ");
+      logint((int)c.commandType);
+      logln("");
   }
 }
 
