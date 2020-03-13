@@ -45,6 +45,7 @@ void loop() {
     if (digitalRead(BUTTON_PIN) == LOW) {
       while (digitalRead(BUTTON_PIN) == LOW) delay(10);
       int numberOfTicks = (millis() - startTime) * 0.06;
+      if (numberOfTicks > 255) numberOfTicks = 255; //prevent overflow
       Command buttonPressCmd = Command(0, BUTTON_PRESS, 0, HARDWARE);
       buttonPressCmd.command[2] = thisCell;
       buttonPressCmd.command[3] = numberOfTicks % 256;
