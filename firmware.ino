@@ -40,11 +40,15 @@ void loop() {
     processNewCommand(softwareCommand);
   }
   else if (digitalRead(BUTTON_PIN) == LOW) {
+    unsigned long startTime = millis();
     delay(BUTTON_DEBOUNCE_TIME);
     if (digitalRead(BUTTON_PIN) == LOW) {
-      Command buttonPressCmd = Command(0, BUTTON_PRESS, thisCell, HARDWARE);
-      buttonPressCmd.send();
       while (digitalRead(BUTTON_PIN) == LOW) delay(10);
+      int numberOfTicks = (millis() - startTime) * 0.06;
+      Command buttonPressCmd = Command(0, BUTTON_PRESS, 0, HARDWARE);
+      buttonPressCmd.command[2] = thisCell;
+      buttonPressCmd.command[3] = numberOfTicks % 256;
+      buttonPressCmd.send();
     }
   }
   delay(10);

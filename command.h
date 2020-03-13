@@ -29,7 +29,7 @@ class Command {
 public:
   int cellNumber;
 
-  byte command[4]; //TODO: it was only made public for testing
+  byte command[4];
 
   SerialPort rxPort; //TODO: it was only made public for testing
 
