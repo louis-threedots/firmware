@@ -1,0 +1,41 @@
+*Pick And Place List
+*Company=
+*Author=
+*eMail=
+*
+*Project=louis PCB
+*Date=19:09:10
+*CreatedBy=Fritzing 0.9.4.2019-12-01.CD-498-0-a1ffcea
+*
+*
+*Coordinates in mm, always center of component
+*Origin 0/0=Lower left corner of PCB
+*Rotation in degree (0-360, math. pos.)
+*
+*No;Value;Package;X;Y;Rotation;Side;Name
+1;;;12.5349;-46.3798;0;Bottom;Copper Fill9
+2;;;23.749;-29.3872;0;Bottom;Copper Fill2
+3;;;12.5349;-53.9998;0;Bottom;Copper Fill12
+4;;;30.1752;-25.501;0;Bottom;Copper Fill1
+5;;;25.2756;-19.2273;0;Bottom;Via3
+6;;;20.1956;-21.7673;0;Bottom;Via2
+7;;;39.624;-26.9361;0;Bottom;Copper Fill3
+8;;;45.5956;-57.3273;0;Bottom;Hole2
+9;;;30.3149;-55.7016;0;Bottom;Copper Fill4
+10;;dip;36.7056;-28.1173;180;Bottom;ATMEGA328
+11;;;45.5956;-1.44727;0;Bottom;Hole1
+12;;;12.5349;-55.6762;0;Bottom;Copper Fill11
+13;;molex-1x6_lock;34.1656;-54.2793;180;Bottom;INPUT
+14;;rj11-6;11.3691;-13.5123;90;Bottom;Servo Socket
+15;;molex-1x6_lock;34.1656;-6.01927;180;Bottom;OUPUT
+16;;;12.5349;-48.0562;0;Bottom;Copper Fill8
+17;;;16.8656;-37.0453;0;Bottom;Copper Fill6
+18;;;16.8656;-29.4253;0;Bottom;Copper Fill7
+19;;cap-pth-small2;18.9256;-29.3873;0;Bottom;C5
+20;;cap-pth-small2;18.9256;-37.0073;0;Bottom;C6
+21;;THT;13.8456;-50.9773;90;Bottom;MOTOR Driver
+22;;THT;25.2756;-31.8373;90;Bottom;Crystal
+23;;;21.4656;-42.0873;0;Bottom;button
+24;;;15.0749;-55.6762;0;Bottom;Copper Fill13
+25;;;30.3149;-5.7398;0;Bottom;Copper Fill5
+26;;;18.669;-42.1253;0;Bottom;Copper Fill10
